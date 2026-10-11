@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "portfolio_id": "sample-001",
+  "name": "Sample Growth & Income Portfolio",
+  "as_of": "2026-10-11",
+  "base_currency": "USD",
+  "account_type": "taxable",
+  "investor_profile": {
+    "risk_tolerance": "moderate",
+    "objective": "growth_and_income",
+    "time_horizon_years": 10
+  },
+  "cash": {
+    "amount": 25000.0,
+    "currency": "USD"
+  },
+  "holdings": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "asset_type": "common_stock",
+      "sector": "Information Technology",
+      "lots": [
+        {
+          "lot_id": "AAPL-1",
+          "trade_date": "2019-03-15",
+          "shares": 1289,
+          "price_per_share": 46.53,
+          "cost_basis": 59977.17,
+          "holding_period": "long_term"
+        },
+        {
+          "lot_id": "AAPL-2",
+          "trade_date": "2023-08-01",
+          "shares": 204,
+          "price_per_share": 195.61,
+          "cost_basis": 39904.44,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "asset_type": "common_stock",
+      "sector": "Information Technology",
+      "lots": [
+        {
+          "lot_id": "MSFT-1",
+          "trade_date": "2020-06-01",
+          "shares": 492,
+          "price_per_share": 182.83,
+          "cost_basis": 89952.36,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "asset_type": "common_stock",
+      "sector": "Information Technology",
+      "lots": [
+        {
+          "lot_id": "NVDA-1",
+          "trade_date": "2023-01-17",
+          "shares": 2824,
+          "price_per_share": 17.702,
+          "cost_basis": 49990.45,
+          "holding_period": "long_term"
+        },
+        {
+          "lot_id": "NVDA-2",
+          "trade_date": "2026-02-02",
+          "shares": 161,
+          "price_per_share": 185.61,
+          "cost_basis": 29883.21,
+          "holding_period": "short_term"
+        }
+      ]
+    },
+    {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "asset_type": "common_stock",
+      "sector": "Financials",
+      "lots": [
+        {
+          "lot_id": "JPM-1",
+          "trade_date": "2021-02-01",
+          "shares": 617,
+          "price_per_share": 129.62,
+          "cost_basis": 79975.54,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway Inc. Class B",
+      "asset_type": "common_stock",
+      "sector": "Financials",
+      "lots": [
+        {
+          "lot_id": "BRK-B-1",
+          "trade_date": "2021-08-02",
+          "shares": 269,
+          "price_per_share": 278.14,
+          "cost_basis": 74819.66,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "asset_type": "common_stock",
+      "sector": "Health Care",
+      "lots": [
+        {
+          "lot_id": "JNJ-1",
+          "trade_date": "2020-09-01",
+          "shares": 461,
+          "price_per_share": 151.52,
+          "cost_basis": 69850.72,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "PFE",
+      "name": "Pfizer Inc.",
+      "asset_type": "common_stock",
+      "sector": "Health Care",
+      "lots": [
+        {
+          "lot_id": "PFE-1",
+          "trade_date": "2021-12-17",
+          "shares": 1008,
+          "price_per_share": 59.48,
+          "cost_basis": 59955.84,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "XOM",
+      "name": "Exxon Mobil Corporation",
+      "asset_type": "common_stock",
+      "sector": "Energy",
+      "lots": [
+        {
+          "lot_id": "XOM-1",
+          "trade_date": "2022-03-01",
+          "shares": 821,
+          "price_per_share": 79.17,
+          "cost_basis": 64998.57,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "PG",
+      "name": "The Procter & Gamble Company",
+      "asset_type": "common_stock",
+      "sector": "Consumer Staples",
+      "lots": [
+        {
+          "lot_id": "PG-1",
+          "trade_date": "2019-11-01",
+          "shares": 565,
+          "price_per_share": 123.87,
+          "cost_basis": 69986.55,
+          "holding_period": "long_term"
+        }
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Co. Ltd. (ADR)",
+      "asset_type": "adr",
+      "sector": "Information Technology",
+      "lots": [
+        {
+          "lot_id": "TSM-1",
+          "trade_date": "2024-07-11",
+          "shares": 325,
+          "price_per_share": 184.5,
+          "cost_basis": 59962.5,
+          "holding_period": "long_term"
+        }
+      ]
+    }
+  ],
+  "conventions": {
+    "price_source": "yfinance close on trade_date (next trading day if closed)",
+    "split_adjusted": true,
+    "dividend_adjusted": false,
+    "note": "shares and price_per_share are in current (post-split) share terms; current value is not stored \u2014 derive it from live quotes"
+  }
+}
