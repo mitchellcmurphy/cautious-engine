@@ -111,6 +111,18 @@ else
     --output none
 fi
 
+# The old revision keeps serving until the new one is ready, so /health alone can
+# pass against the previous image. Wait for the new revision to become ready first.
+log "Waiting for the new revision to become ready"
+ready=""
+for _ in $(seq 1 40); do
+  read -r latest latest_ready < <(az containerapp show -g "$RESOURCE_GROUP" -n "$APP_NAME" \
+    --query "[properties.latestRevisionName, properties.latestReadyRevisionName]" -o tsv | tr '\n' ' ')
+  if [[ -n "$latest" && "$latest" == "$latest_ready" ]]; then ready=1; break; fi
+  sleep 10
+done
+[[ -n "$ready" ]] || die "revision $latest not ready after ~7 minutes; check: az containerapp revision list -g $RESOURCE_GROUP -n $APP_NAME -o table"
+
 FQDN="$(az containerapp show -g "$RESOURCE_GROUP" -n "$APP_NAME" --query properties.configuration.ingress.fqdn -o tsv)"
 log "Checking https://$FQDN/health"
 for _ in $(seq 1 20); do

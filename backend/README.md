@@ -1,7 +1,11 @@
 # Backend
 
-FastAPI service providing current stock quotes (Yahoo Finance) and AI-generated
-summaries of recent SEC 10-K/10-Q filings (SEC EDGAR + OpenAI).
+FastAPI service providing current stock quotes (Yahoo Finance), AI-generated summaries of
+recent SEC 10-K/10-Q filings (SEC EDGAR + OpenAI), portfolio valuation, and buy/sell/hold
+recommendations.
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for how it's built, how to call it well, and what's
+planned next.
 
 ## Setup
 
