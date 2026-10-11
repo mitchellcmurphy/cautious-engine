@@ -1,0 +1,30 @@
+# Local development with hot reload on both sides.
+#   docker compose up --build    → open http://localhost:5173
+# Vite proxies /quotes and /filings to the backend service.
+services:
+  backend:
+    build:
+      context: .
+      target: dev
+    env_file: backend/.env
+    environment:
+      PORTFOLIO_DATA_PATH: /app/data/sample_portfolio.json
+    volumes:
+      - ./backend/app:/app/app
+      - ./data:/app/data:ro
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: node:22-slim
+    working_dir: /fe
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    environment:
+      API_PROXY_TARGET: http://backend:8000
+    volumes:
+      - ./frontend:/fe
+      - /fe/node_modules # container-native deps, don't clobber with the host's
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend

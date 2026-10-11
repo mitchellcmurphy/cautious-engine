@@ -1,0 +1,11 @@
+# Runs the exact single image that gets pushed to ACR.
+#   docker compose -f compose.prod.yaml up --build    → open http://localhost:8080
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+    image: stockbrief:local
+    env_file: backend/.env
+    ports:
+      - "8080:8000"
