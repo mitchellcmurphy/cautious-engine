@@ -12,6 +12,25 @@ dist
 dist-ssr
 *.local
 
+# Environment files (keep the committed .env.mock, which holds no secrets)
+.env
+.env.*
+!.env.mock
+!.env.example
+
+# Build / tool caches
+*.tsbuildinfo
+.vite/
+vite.config.*.timestamp-*
+.eslintcache
+.cache/
+
+# Test output
+coverage/
+test-results/
+playwright-report/
+.playwright-mcp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
